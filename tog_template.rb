@@ -89,7 +89,7 @@ end
 
 def install_tog_core_plugins    
   quiet_git_install('tog_core', "git://github.com/tog/tog_core.git", TOG_RELEASE )
-  quiet_git_install('tog_social', "git://github.com/tog/tog_social.git", TOG_RELEASE )
+  quiet_git_install('tog_social', "git://github.com/boonious/tog_social.git" )
   quiet_git_install('tog_mail', "git://github.com/tog/tog_mail.git", TOG_RELEASE )
 
   route "map.routes_from_plugin 'tog_core'"
@@ -140,12 +140,17 @@ def install_tog_user_plugin
   if STDIN.gets.strip == ""
     silence!   
 
-    quiet_git_install("restful_authentication", "git://github.com/technoweenie/restful-authentication.git") 
+    quiet_git_install("restful_authentication", "git://github.com/boonious/restful-authentication.git") 
     File.rename "vendor/plugins/restful-authentication", "vendor/plugins/restful_authentication"
+    
+    quiet_git_install("oauth-plugin", "git://github.com/boonious/oauth-plugin.git") 
+    File.rename "vendor/plugins/oauth-plugin", "vendor/plugins/oauth-plugin"
+    
+    generate "oauth_consumer" 
     
     rake "auth:gen:site_key"
     
-    quiet_git_install('tog_user', "git://github.com/tog/tog_user.git", TOG_RELEASE)
+    quiet_git_install('tog_user', "git://github.com/boonious/tog_user.git" )
 
     route "map.routes_from_plugin 'tog_user'"
     puts "* adding routes to host app... #{"added".green.bold}";
