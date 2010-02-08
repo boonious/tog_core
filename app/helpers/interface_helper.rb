@@ -18,8 +18,13 @@ module InterfaceHelper
   
   def links_for_navigation(section)
     tabs = Tog::Interface.sections(section).tabs
+    last_tab_index = tabs.length - 1
     links = tabs.map do |tab|
-      nav_link_to(tab)
+      if tabs.index(tab) == last_tab_index
+        nav_link_to_last(tab)
+      else
+        nav_link_to(tab)
+      end
     end.compact
   end
   
@@ -28,6 +33,14 @@ module InterfaceHelper
       content_tag(:li, %{#{link_to I18n.t(tab.key), tab.url}#{sub_nav_links_to(tab.items)}}, :class=>"on")
     else
       content_tag(:li, link_to(I18n.t(tab.key), tab.url))
+    end
+  end
+  
+  def nav_link_to_last(tab)
+    if tab.include_url?(request.request_uri)
+      content_tag(:li, %{#{link_to I18n.t(tab.key), tab.url}#{sub_nav_links_to(tab.items)}}, :class=>"on last")
+    else
+      content_tag(:li, link_to(I18n.t(tab.key), tab.url), :class=>"last")
     end
   end
   
