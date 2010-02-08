@@ -8,9 +8,9 @@ require "will_paginate"
 Tog::Plugins.settings :tog_core,  'language.default'          => "en",
                                   'host.name'                 => "0.0.0.0",
                                   'host.port'                 => 3000,
-                                  'site.name'                 => "toginstallation.com",
-                                  'mail.system_from_address'  => "Tog Admin <tog@linkingpaths.com>",
-                                  'mail.default_subject'      => "[Tog Installation] ",
+                                  'site.name'                 => "Usability & Contemporary User Experience in Digital Libraries",
+                                  'mail.system_from_address'  => "UX2.0  <library@nesc.ac.uk>",
+                                  'mail.default_subject'      => "[UX2.0 web] ",
                                   'patch_field_error_proc'    => true,
                                   'pagination_size'           => 50
 
@@ -59,3 +59,9 @@ manage.add_item "Abuses", "/admin/manage_abuses"
 
 Tog::Interface.sections(:member).add "Home", "/"
 Tog::Interface.sections(:site).add "Home", "/"
+
+Tog::Interface.sections(:member).add "About UX2", "http://www.jisc.ac.uk/whatwedo/programmes/inf11/sue2/ux2"
+Tog::Interface.sections(:site).add "About UX2", "http://www.jisc.ac.uk/whatwedo/programmes/inf11/sue2/ux2"
+
+Tog::Interface.sections(:member).add "Library", "http://library.nesc.ed.ac.uk/"
+Tog::Interface.sections(:site).add "Library", "http://library.nesc.ed.ac.uk/"

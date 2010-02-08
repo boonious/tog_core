@@ -13,8 +13,12 @@ en:
         abuses: "Abuse"
     member:
       home: Home
+      about_ux2: JISC UX2.0
+      library: Library
     site:
       home: Home
+      about_ux2: JISC UX2.0
+      library: Library
   tog_core:
     plugin_name: Core
     plugin_description: tog's core plugin
@@ -111,7 +115,7 @@ en:
         header_options:
           greeting: Hello
           account: Account
-          my_profile: My profile
+          my_profile: Settings
           dashboard: Dashboard
           logout: Log-out
           sign_up: Sign up
