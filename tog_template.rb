@@ -138,7 +138,11 @@ def install_tog_user_plugin
   verbum!    
   
   if STDIN.gets.strip == ""
-    silence!   
+    silence!
+    
+    # route for Twitter-like http://baseurl/username profile shortcuts
+    route "map.connect '/:user_name', :controller => 'profiles', :action => 'show'"
+    puts "* adding profile url shortcut route to host app... #{"added".green.bold}";
 
     quiet_git_install("restful_authentication", "git://github.com/boonious/restful-authentication.git") 
     File.rename "vendor/plugins/restful-authentication", "vendor/plugins/restful_authentication"
@@ -153,6 +157,7 @@ def install_tog_user_plugin
     quiet_git_install('tog_user', "git://github.com/boonious/tog_user.git" )
 
     route "map.routes_from_plugin 'tog_user'"
+    
     puts "* adding routes to host app... #{"added".green.bold}";
   else
     silence!  
@@ -303,6 +308,7 @@ installation_step "Updating the host app files..." do
   puts "* run migrations... #{"done".green.bold}";
   File.delete 'public/index.html'
   puts "* removing index.html... #{"done".green.bold}";
+    
 end
 
 installation_step "Tog #{TOG_RELEASE} installed" do
