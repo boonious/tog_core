@@ -272,7 +272,7 @@ installation_step "Installing plugin dependencies..." do
     'acts_as_scribe'    => "git://github.com/linkingpaths/acts_as_scribe.git",
     'paperclip'         => "git://github.com/thoughtbot/paperclip.git",
     'viking'            => "git://github.com/technoweenie/viking.git",
-    'acts_as_shareable' => "git://github.com/molpe/acts_as_shareable.git"
+    'acts_as_shareable' => "git://github.com/boonious/acts_as_shareable.git"
   })
   
 end
