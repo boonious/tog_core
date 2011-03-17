@@ -63,5 +63,8 @@ Tog::Interface.sections(:site).add "Home", "/"
 Tog::Interface.sections(:member).add "About UX2", "http://www.jisc.ac.uk/whatwedo/programmes/inf11/sue2/ux2"
 Tog::Interface.sections(:site).add "About UX2", "http://www.jisc.ac.uk/whatwedo/programmes/inf11/sue2/ux2"
 
-Tog::Interface.sections(:member).add "Library", "http://library.nesc.ed.ac.uk/"
-Tog::Interface.sections(:site).add "Library", "http://library.nesc.ed.ac.uk/"
+Tog::Interface.sections(:member).add "Wiki", "https://www.wiki.ed.ac.uk/display/UX2/Wiki"
+Tog::Interface.sections(:site).add "Wiki", "https://www.wiki.ed.ac.uk/display/UX2/Wiki"
+
+Tog::Interface.sections(:member).add "Library", "http://ux2.nesc.ed.ac.uk:3000/"
+Tog::Interface.sections(:site).add "Library", "http://ux2.nesc.ed.ac.uk:3000/"

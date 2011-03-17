@@ -15,10 +15,12 @@ en:
       home: Home
       about_ux2: JISC UX2.0
       library: Library
+      wiki: Wiki
     site:
       home: Home
       about_ux2: JISC UX2.0
       library: Library
+      wiki: Wiki
   tog_core:
     plugin_name: Core
     plugin_description: tog's core plugin
